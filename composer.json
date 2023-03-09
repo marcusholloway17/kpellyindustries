@@ -1,0 +1,140 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "fruitcake/laravel-cors": "^2.0.5",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.0",
+        "laravel/sanctum": "^2.14",
+        "laravel/tinker": "^2.7",
+        "drewlabs/filesystem": "^1.0",
+        "drewlabs/psr7-stream": "^1.0",
+        "drewlabs/core-helpers": "^2.0",
+        "drewlabs/contracts": "^2.0",
+        "drewlabs/core": "^2.0",
+        "drewlabs/database": "^2.0",
+        "drewlabs/http": "^2.0",
+        "drewlabs/support": "^2.0",
+        "drewlabs/php-value": "^0.1.5",
+        "drewlabs/http-client": "^1.0",
+        "drewlabs/auth-http-guard": "^0.3"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0",
+        "drewlabs/code-generator": "^2.0",
+        "drewlabs/component-generators": "^2.1.25"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-core-helpers.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-filesystem.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-psr7-stream.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-mvc-components-generator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-code-generator.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-contracts.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-core.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-packages-database.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-laravel-http.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-support.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-value.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-core-helpers.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-http-client.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:liksoft/drewlabs-php-http-guard.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/liksoft/drewlabs-php-http-guard.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
